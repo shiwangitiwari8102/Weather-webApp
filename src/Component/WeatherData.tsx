@@ -50,17 +50,12 @@ const WeatherData: React.FC<WeatherDataProps> = ({ city }) => {
     }
   };
 
-  // const handleSearch = () => {
-  //   if (searchQuery.trim() !== '') {
-  //     fetchWeatherData();
-  //   }
-  // };
-
+  
   const handleSearch = () => {
-  if (searchQuery.trim() !== '') { // Check if searchQuery is not empty
+  if (searchQuery.trim() !== '') { 
     fetchWeatherData();
   } else {
-    // Handle empty search query error
+   
     console.error('Please enter a valid city name');
   }
 };
@@ -96,20 +91,13 @@ const WeatherData: React.FC<WeatherDataProps> = ({ city }) => {
         <Card style={{ backgroundColor: '#afb0ff' }}>
           <Card.Body>
             <Form.Group controlId="formCity" className='d-flex flex-column flex-md-row'>
-              {/* <Form.Control
-                type="text"
-                placeholder="Enter city name"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className='mb-2 mb-md-0'
-              /> */}
-              <Form.Control
-  type="text"
-  placeholder="Enter city name"
-  value={searchQuery}
-  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value)} // Update the searchQuery state
-  className='mb-2 mb-md-0'
-/>
+              
+               <Form.Control
+                 type="text"
+                   placeholder="Enter city name"
+                  value={searchQuery}
+                   onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value)} // Update the searchQuery state
+                  className='mb-2 mb-md-0'/>
               <Button
                 variant="primary"
                 onClick={handleSearch}
