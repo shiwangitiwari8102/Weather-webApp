@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Card, Button, Form, Container, Row, Col } from 'react-bootstrap'; // Importing React Bootstrap components
-
+import { Card, Button, Form, Container, Row, Col } from 'react-bootstrap'; 
 interface ForecastItem {
   dt: number;
   main: {
@@ -27,9 +26,12 @@ interface Weather {
   }[];
 }
 
+
 interface WeatherDataProps {
   city: string;
+  weatherData?: Weather; 
 }
+
 
 const WeatherData: React.FC<WeatherDataProps> = ({ city }) => {
   const apiKey = "e8c24597158bcaa170b724112df7498f";
@@ -87,6 +89,7 @@ const WeatherData: React.FC<WeatherDataProps> = ({ city }) => {
 
   return (
     <Container style={{ width: '80%' }} >
+      <div className="d-none">Weather data for {city}</div>;
       <div className="weather-containerm ">
         <Card style={{ backgroundColor: '#afb0ff' }}>
           <Card.Body>

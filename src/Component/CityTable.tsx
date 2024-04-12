@@ -1,7 +1,3 @@
-
-
-
-
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -124,7 +120,7 @@ const CityTable: React.FC = () => {
           </thead>
           <tbody>
             {filteredCities.map((city: City) => (
-              <tr key={city.geoname_id}>
+              <tr key={city.name}>
                 <td style={{ fontFamily: 'Georgia, serif' }}>
                   {/* Link to the weather route with the city name */}
                   <Link to={`/weather/${city.geoname_id}`} onClick={() => handleCityClick(city.name)} style={{ textDecoration: 'none', color: 'black', fontWeight: 'bolder' }}>
